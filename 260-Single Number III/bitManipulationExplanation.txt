@@ -1,0 +1,20 @@
+1. This problem involves duplicate items so we can use XOR bit manipulation 
+    because x^x = 0
+
+2. Let, one time occuring numbers be X and Y
+
+3. If we go through the entire array and get the XOR of every element final result will be: X^Y
+    because all the other elements are occuring 2 times and therefore they are cancel out in XOR operation
+
+4. Now we have to separate X and Y from X^Y
+
+5. Notice that when there is a set bit(1) in X^Y that means X and Y have opposite bits in that position
+
+6. Therefore take the right most set bit of X^Y
+
+7. Then separate the original array to 2 buckets of numbers which have the above mentioned position as a set bit 
+    and not a set bit
+
+8. XOR elemenets of each of these buckets
+
+9. Final value from each bucket will be the required one time occuring numbers
