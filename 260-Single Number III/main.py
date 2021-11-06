@@ -17,3 +17,15 @@ class Solution:
                 n2 ^= i
                 
         return [n1, n2]
+
+class Solution:
+    # Time O(n) | Space O(n)
+    # Using hash map - Have O(1) lookup and remove
+    def singleNumber(self, nums: List[int]) -> List[int]:
+        mp = {}
+        for i in nums:
+            if not mp.get(i):
+                mp[i] = True
+            else:
+                mp.pop(i)
+        return mp.keys()
